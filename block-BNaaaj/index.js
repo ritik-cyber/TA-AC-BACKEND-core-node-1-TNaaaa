@@ -12,3 +12,9 @@ var version = os.version();
 var buff1 = Buffer.alloc(12);
 buff1.write("welocme hell");
 console.log(buff1.toString());
+
+var { readFile, readFileSync, unlink } = require("fs");
+
+readFile("./content", (err, content) => {
+  console.log(content);
+});
