@@ -10,6 +10,7 @@ function handlerServer(req, res) {
       res.end(content);
     });
   } else if (req.method === "GET" && req.url === "/stream") {
+    res.setHeader("Content-type", "text/html");
     fs.createReadStream("/node.html").pipe(res);
   }
 }
